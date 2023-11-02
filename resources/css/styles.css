@@ -1,0 +1,524 @@
+/* ======================
+
+*CSS V0.1
+
+Made by: Daan Parker
+
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Roboto Slab', serif;
+
+
+========================*/
+
+/* ========
+    Root
+======== */
+
+html {
+    scroll-behavior: smooth;
+  }
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Roboto Slab', serif;
+    color: var(--white);
+    font-size: 19px;
+}
+h1{
+    font-family: 'Ubuntu', sans-serif;
+}
+:root{
+    --lightgrey: #4a4c50;
+    --grey: #313b4c;
+    --darkgrey: #1f2227;
+    --bluegrey: #1f2b3b70;
+    --white:#f6f6f6;
+    --black:#1b1b1b;
+    --lightred:#f43c3c;
+    --red:#b81010;
+    --darkred:#720606;
+    --crimson:#dc143c;
+    --lightorange:#ffa41d;
+    --orange:#ff9900;
+    --darkorange:#ce7b00;
+    --lightblue:#17b7d3;
+    --blue:#3a1bb7;
+    --darkblue:#030563;
+    --yellow:#ffef0e;
+    --lightgreen:#25ff2c;
+    --green:#22a801;
+    --darkgreen:#104701;
+    --purple:#9b04bd;
+    --white:#f6f6f6;
+    --whitetrans:#f6f6f695;
+}
+
+
+/* ========
+    Header
+======== */
+header{
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    background-color: var(--darkgrey);
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    -webkit-box-shadow: 0px 15px 30px 3px var(--bluegrey);
+-moz-box-shadow: 0px 15px 30px 3px var(--bluegrey);
+box-shadow: 0px 15px 30px 3px var(--bluegrey);
+}
+header a{
+    width: 120px;
+    height: 100%;
+}
+header a button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    transition: 0.2s;
+    font-size: 20px;
+    border-bottom: solid 2px transparent;
+}
+header a button:hover{
+    cursor: pointer;
+    border-bottom: solid 2px var(--orange);
+    background-color: var(--black);
+    transition: 0.1s;
+}
+.headerheight{
+    width: 100%;
+    height: 6vh;
+}
+
+/* ========
+    Footer
+======== */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: var(--lightgrey);
+}
+
+/* ========
+    Body
+======== */
+.space{
+    width: 100%;
+    height: 30px;
+}
+
+body{
+background-color: var(--darkgrey);
+display: flex;
+flex-direction: column;
+}
+section{
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+
+}
+.side_section{
+    width: 50%;
+    height: 100%;
+    padding: 15px;
+
+}
+.two_third_section{
+    width:66.66%;
+    height: 100%;
+    padding: 10px;
+
+}
+.third_section{
+    width:33.33%;
+    height: 100%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Home_image{
+    width: 100%;
+    height: 85vh;
+    background-image: url("../img/StudyBooklarge.jpg");
+    background-size: cover;
+}
+
+.section_middle, .section_Home{
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.section_Home{
+    background: rgb(34,36,39);
+    background: linear-gradient(180deg, rgba(34,36,39,0.7562674728094363) 9%, rgba(34,36,39,0.7254551478794643) 39%, rgba(34,36,39,0.7702730750503326) 52%, rgba(34,36,39,0.9523459041819853) 75%, rgba(31,34,39,1) 82%);
+
+}
+
+.middle_section{
+    width: 85%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========
+    Lander
+======== */
+
+.lander_div{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Lander_text1{
+    font-size: 60px;
+}
+.Lander_text2{
+    font-size: 100px;
+}
+
+/* ========
+    Information
+======== */
+
+.info_div, .Linfo_div, .info_img{
+    width: 410px;
+    height: 700px;
+    padding: 20px;
+    border-radius: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Linfo_div{
+    width: 700px;
+}
+
+.img_cent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_cent img{
+    width: 70%;
+    height: auto;
+}
+
+.info_div p, .info_div h1, .Linfo_div p, .Linfo_div h1, .info_img p, .info_img h1{
+    color: var(--white);
+    line-height: 33px;
+    font-size: 16px;
+}
+.Linfo_div h1, .info_div h1{
+    font-size: 30px;
+    font-family: 'ubuntu' 'sans serif';
+    border-bottom: solid 3px var(--orange);
+}
+
+#Locatie{
+    padding: 0;
+    background-image:url("../img/House.jpg");
+    background-size: cover;
+}
+#Tijden{
+    padding: 0;
+    background-image:url("../img/Calendar.jpg");
+    background-size: cover;
+}
+#Niveau{
+    padding: 0;
+    background-image:url("../img/Car.jpg");
+    background-size: cover;
+}
+.info_img{
+    width: 100%;
+    height: 100%;
+    background: rgb(35 36 42 / 73%);    
+}
+
+/* ========
+    Calendar
+======== */
+
+.back_calendar{
+    width: 100%;
+    height: 90%;
+    padding: 20px;
+    background-color: var(--whitetrans);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calendar{
+    min-width: 400px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.calendar_day{
+    width: 40%;
+    background-color: var(--grey);
+    border-right: solid 2px var(--orange);
+}
+
+.calendar_month{
+    width: 60%;
+    background-color: var(--grey);
+}
+
+.cheader{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--darkgrey);
+}
+
+.cbody{
+    width: 100%;
+    height: 80%;
+}
+
+.cfooter{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--darkgrey);
+}
+
+.cweek{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+}
+
+.cday{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+.cday label{
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 0  ;
+    color: var(--whitetrans);
+}
+
+.cday h1{
+    font-size: 37px;;
+    font-weight: 500;
+    color: var(--white);
+}
+
+
+.cday_body{
+    width: 100%;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.cplanned{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;}
+
+.cplanned div{
+    display: flex;
+    width: min-content;
+    height: auto;
+}
+
+.cplanned p{
+    font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+
+
+
+
+
+/* ========
+    Contact
+======== */
+
+.contact_links{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.contact_links ul{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.contact_links ul li{
+    width: 100%;     
+    display: flex;
+}
+
+.contact_links ul li button{
+    width: 40px;
+    height: 40px;     
+    border-radius: 50%;
+    border: none;
+background-color: var(--red);    
+}
+
+
+.contact_email form{
+    width: 100%;
+    min-height: 100%;
+    height: 700px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.form_small{
+    width: 100%;
+    height: 33.33%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form_large{
+    padding: 10px;
+    width: 100%;
+    height: 66.66%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form label{
+ color: var(--white);
+}
+form input{
+    border-radius: 10px;
+}
+form input[type=text]{
+    width: 30%;
+    height: 35px;
+    color: var(--black);
+}
+form input[type=email]{
+    width: 45%;
+    height: 35px;
+    color: var(--black);
+}
+form input[type=submit]{
+    width: 200px;
+    height: 40px;
+    border-radius: 40px;
+    color: var(--black);
+}
+form textarea{
+    width: 100%;
+    height: 80%;
+    color: var(--black);
+    resize: none;
+}
+
+
+
+
+/* ========
+    Login
+======== */
+
+.lbody{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.lbody form{
+    width: 40%;
+    height: 40%;
+    min-height: 400px;
+    min-width: 400px;
+    background-color: var(--lightgrey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+
+/* ========
+    Admin
+======== */
+
+.adbody{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
