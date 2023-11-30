@@ -56,15 +56,33 @@
                     <div class="calendar_day">
                         <div class="cheader"><p>DAG </p></div>
                         <div class="cday_body">
-                            @foreach ($test as $testing)
+                            @foreach ($Leer as $Leerling)
                             <ul>
-                                <li>{{$testing->naam}}</li>
-                                <li>{{$testing->email}}</li>
-                                <li>{{$testing->telefoon}}</li>
-                                <li>{{$testing->niveau}}</li>
-                                <li>{{$testing->startDatum}}</li>
-                                <li>{{$testing->eindDatum}}</li>
-                                <li>{{$testing->opmerkingen}}</li>
+                                <li>{{$Leerling->id}}</li>
+                                <li>{{$Leerling->naam}}</li>
+                                <li>{{$Leerling->email}}</li>
+                                <li>{{$Leerling->telefoon}}</li>
+                                <li>{{$Leerling->niveau}}</li>
+                                <li>{{$Leerling->startDatum}}</li>
+                                <li>{{$Leerling->eindDatum}}</li>
+                                <li>{{$Leerling->opmerkingen}}</li>
+                                <hr>
+                            </ul>
+                            @endforeach 
+                            @foreach ($Plan as $Planning)
+                            <ul>
+                                <li>{{$Planning->LeerlingId}}</li>
+                                <li>{{$Planning->LesId}}</li>
+                                <hr>
+                            </ul>
+                            @endforeach 
+                            @foreach ($Les as $Lessen)
+                            <ul>
+                                <li>{{$Lessen->id}}</li>
+                                <li>{{$Lessen->startTijd}}</li>
+                                <li>{{$Lessen->eindTijd}}</li>
+                                <li>{{$Lessen->datum}}</li>
+                                <li>{{$Lessen->opmerkingen}}</li>
                                 <hr>
                             </ul>
                             @endforeach       
