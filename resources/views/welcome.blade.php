@@ -56,21 +56,18 @@
                     <div class="calendar_day">
                         <div class="cheader"><p>DAG </p></div>
                         <div class="cday_body">
-                            <div class="cplanned">
-                                <h1>GENOMEN</h1>
-                                <p>van: 13:00</p>
-                                <p>tot: 14:00<p>
-                            </div>
-                            <div class="cplanned">
-                                <h1>GENOMEN</h1>
-                                <p>van: 13:00</p>
-                                <p>tot: 14:00<p>
-                            </div>
-                            <div class="cplanned">
-                                <h1>GENOMEN</h1>
-                                <p>van: 13:00</p>
-                                <p>tot: 14:00<p>
-                            </div>
+                            @foreach ($test as $testing)
+                            <ul>
+                                <li>{{$testing->naam}}</li>
+                                <li>{{$testing->email}}</li>
+                                <li>{{$testing->telefoon}}</li>
+                                <li>{{$testing->niveau}}</li>
+                                <li>{{$testing->startDatum}}</li>
+                                <li>{{$testing->eindDatum}}</li>
+                                <li>{{$testing->opmerkingen}}</li>
+                                <hr>
+                            </ul>
+                            @endforeach       
                         </div>
                     <div class="cfooter"></div>
                     </div>

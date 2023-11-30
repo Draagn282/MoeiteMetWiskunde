@@ -7,6 +7,7 @@
         
         <link href="{{ asset('../resources/css/styles.css') }}" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.bunny.net">
+        <link rel="icon" type="image/x-icon" href="{{ asset('../resources/img/Logo.png') }}">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
