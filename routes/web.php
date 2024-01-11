@@ -17,7 +17,6 @@ use App\Http\Controllers\adminAuthController;
 
 Route::get('/',function(){return view('welcome');});
 Route::get('/', [IndexController::class, 'calendar']);
-Route::get('/', [IndexController::class, 'Date']);
 
 
 Route::get('/dbconn',function(){return view('dbconn');});

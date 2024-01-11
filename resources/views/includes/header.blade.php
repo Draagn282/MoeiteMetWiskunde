@@ -19,6 +19,7 @@
             <a href="#Thuis"><button>Home</button></a>
             <a href="#Informatie"><button>informatie</button></a>
             <a href="#Planning"><button>Planning</button></a>
+            <a href="#Recenties"><button>Recenties</button></a>
             <a href="#Contact"><button>Contact</button></a>
         </header>
         <div class="headerheight"></div>
