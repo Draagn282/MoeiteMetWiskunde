@@ -155,7 +155,7 @@ section{
 .Home_image{
     width: 100%;
     height: 85vh;
-    background-image: url("../img/StudyBooklarge.jpg");
+    background-image: url("../img/Bookshelf.jpg");
     background-size: cover;
 }
 
@@ -199,6 +199,19 @@ section{
     align-items: center;
 }
 
+.lander_div div{
+    width: 500px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.lander_div div button{
+    width: auto;
+    height: 50px;
+}
 
 .Lander_text1{
     font-size: 60px;
@@ -250,7 +263,7 @@ section{
 
 #Locatie{
     padding: 0;
-    background-image:url("../img/House.jpg");
+    background-image:url("../img/Location.jpg");
     background-size: cover;
 }
 #Tijden{
@@ -260,7 +273,7 @@ section{
 }
 #Niveau{
     padding: 0;
-    background-image:url("../img/Car.jpg");
+    background-image:url("../img/BenchGreen.jpg");
     background-size: cover;
 }
 .info_img{
@@ -395,22 +408,58 @@ section{
     Revieuws
 ======== */
 
+.rev_section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
 .rev_body{
- width: 100%;
- height: 100%;
- padding: 10px;
- display: flex;
- flex-direction: row;   
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    overflow-x: auto;  
+}
+.rev_write{
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;  
+}
+
+
+.rev_write form{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rev_write form div textarea{
+    width: 100%;
+    height: 30px;
+
 }
 
 .rev{
-    width: 600px;
-    height: 200px;
-    border: 2px solid grey;
+    width: 100%;
+    height: 130px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    
+}
+
+.rev p{
+    font-size: 13px;
 }
 
 

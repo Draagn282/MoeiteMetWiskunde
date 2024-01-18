@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\adminAuthController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,15 @@ use App\Http\Controllers\adminAuthController;
 
 Route::get('/',function(){return view('welcome');});
 Route::get('/', [IndexController::class, 'calendar']);
+Route::post('RevForm', [IndexController::class, 'RevieuwForm']);
 
+
+Route::get('/', [Mailcontroller::class, 'sendMail']);
 
 Route::get('/dbconn',function(){return view('dbconn');});
 Route::get('/login', function(){return view('login');});
+
+
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/login', [adminAuthController::class, 'getLogin'])->name('adminLogin');

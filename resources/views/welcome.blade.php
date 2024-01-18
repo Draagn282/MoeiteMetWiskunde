@@ -6,6 +6,7 @@
                 <p>"Ik heb</p>
                 <h1 class="Lander_text1">Moeite Met Wiskunde"</h1>
                 <p>,Nou daar kan ik mee helpen</p>
+                <div><button>BOEK NU</button><button>Kom meer te weten</button> <button>heb je een vraag?</button> </div>
             </div>
         </div>
     </section>
@@ -153,13 +154,26 @@
 </section>
 <section class="section_middle" id="Recenties">
     <div class="middle_section">
-        <div class="rev_body">
-            <div class="rev">
-                <p>
-                    "Vincent is een aardige jonge, maar heeft heeft me wel te vaak geslagen. Maar toch zit hij op kendo. Dus met ligthsabers spelen is niet een goed idee."
-                </p>
-            </div>
+        <div class="rev_section">
+            <div class="rev_body">
+                @foreach ($revieuw as $rev)
+                <div class="rev"><p>{{$rev->Naam}}</p><p>{{$rev->Text}}</p></div>
+                @endforeach
         </div>
+        <div class="rev_write">
+            <h1>Schrijf een revieuw!</h1>
+            <p>Als je leuke ervarignen hebt met vincent Kan je die hier opschijven!<p>
+            <form action="./RevForm" method="POST">
+                @csrf
+                <label for="Name">Naam</label>
+                <input type="text" name="Name" id="Name">
+                <label for="Name">Text</label>
+                <textarea name="Quote" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="Opsturen!">
+            </form>
+        </div>
+        </div>
+       
     </div>
 </section>
 <section id="Contact">
@@ -167,6 +181,8 @@
         <div class="contact_email">
             <form  method="POST" action="/profile">
                 @csrf
+                <h1>Contact</h1>
+                <p>Als je een vraag hebt of als een les wil plannen kan je hier een mail sturen</p>
                 <div class="form_small">
                     <label for="name">Naam</label>
                     <input type="text" value="" id="name" name="name">
@@ -183,7 +199,7 @@
             </form>
         </div>
     </div>
-    <div class="third_section">
+    <div class="third_section">        
         <div class="contact_links">
             <ul>
                 <li>

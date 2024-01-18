@@ -29,11 +29,30 @@ class IndexController extends Controller
         $zaterdag = DB::table('lesuren')->select('*')->where('dag', '=', 6)->get();
         $zondag = DB::table('lesuren')->select('*')->where('dag', '=', 7)->get();
 
-        dump($maandag,$dinsdag, $woensdag, $donderdag, $vrijdag, $zaterdag, $zondag);
+        $revieuws = DB::table('recenties')->select('*')->where('Goedkeuring', '=', 0)->get();
 
+      
         //SELECT * From les WHERE Week(CURRENT_DATE) = Week(datum);
 
-        return view('welcome', ['maandag' => $maandag, 'dinsdag' => $dinsdag, 'woensdag' => $woensdag, 'donderdag' => $donderdag, 'vrijdag' => $vrijdag, 'zaterdag' => $zaterdag, 'zondag' => $zondag]);
+        return view('welcome', ['maandag' => $maandag, 'dinsdag' => $dinsdag, 'woensdag' => $woensdag, 'donderdag' => $donderdag, 'vrijdag' => $vrijdag, 'zaterdag' => $zaterdag, 'zondag' => $zondag, 'revieuw' => $revieuws]);
     }
+
+    public function RevieuwForm(Request $request){
+       
+        $name = $request->input('Name');
+        $text = $request->input('Quote');
+        $clearance = 0;
+        
+
+        $insert = DB::table('recenties')->insert(['Naam' => $name, 'Text' => $text, 'GoedKeuring' => 0 ]);
+
+        if($insert) echo "<p>SUCCESS</p>";
+        else echo "<p>FAILED</p>";
+    }
+
+    public function Mail(){
+        
+    }
+
 
 }
