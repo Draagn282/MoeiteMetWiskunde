@@ -21,7 +21,7 @@ Route::get('/', [IndexController::class, 'calendar']);
 Route::post('RevForm', [IndexController::class, 'RevieuwForm']);
 
 
-Route::get('/', [Mailcontroller::class, 'sendMail']);
+Route::post('sendMail', [IndexController::class, 'sendMail']);
 
 Route::get('/dbconn',function(){return view('dbconn');});
 Route::get('/login', function(){return view('login');});

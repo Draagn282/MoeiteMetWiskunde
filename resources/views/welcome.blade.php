@@ -179,15 +179,15 @@
 <section id="Contact">
     <div class="two_third_section">
         <div class="contact_email">
-            <form  method="POST" action="/profile">
+            <form  method="POST" action="./sendMail">
                 @csrf
                 <h1>Contact</h1>
                 <p>Als je een vraag hebt of als een les wil plannen kan je hier een mail sturen</p>
                 <div class="form_small">
                     <label for="name">Naam</label>
-                    <input type="text" value="" id="name" name="name">
+                    <input type="text" value="" id="Name" name="Name">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="Email" id="Email">
                 </div>
                 <div class="form_large">
                     <label for="text">Text</label>

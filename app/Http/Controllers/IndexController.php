@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\signUp;
 use Illuminate\View\View;
 use Carbon\Carbon;
 
@@ -50,8 +52,18 @@ class IndexController extends Controller
         else echo "<p>FAILED</p>";
     }
 
-    public function Mail(){
-        
+    public function sendMail(Request $request){
+
+        $name = $request->input('Name');
+        $mail = $request->input('Email');
+        $text = $request->input('Text');
+
+      //  dd($request, $name, $mail, $text, );
+
+        Mail::to('fake@gmail.com')->send(new signUp($name, $mail, $text));
+
+        return back();
+
     }
 
 
