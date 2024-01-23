@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class signUp extends Mailable
+class Dupliceren extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -33,7 +33,7 @@ class signUp extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Sign Up',
+            subject: 'Verstuurd!',
         );
     }
 
@@ -43,7 +43,7 @@ class signUp extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'SignUpView',
+            view: 'Duplicate',
         );
     }
 

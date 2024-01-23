@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\signUp;
+use App\Mail\Dupliceren;
+use App\Mail\Inschrijven;
 use Illuminate\View\View;
 use Carbon\Carbon;
 
@@ -60,7 +61,8 @@ class IndexController extends Controller
 
       //  dd($request, $name, $mail, $text, );
 
-        Mail::to('fake@gmail.com')->send(new signUp($name, $mail, $text));
+        Mail::to($mail)->send(new Dupliceren($name, $mail, $text));
+        Mail::to('Vincent@mail.nl')->send(new Inschrijven($name, $mail, $text));
 
         return back();
 

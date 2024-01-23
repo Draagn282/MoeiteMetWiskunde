@@ -60,7 +60,7 @@
                         @foreach ($maandag as $dag1)
                         <div class="time @if ($dag1->Status == 0)dayNoday @elseif ($dag1->Status == 1)dayFree @elseif ($dag1->Status == 2)dayTakken @else dayNoday @endif">
                         <ul>
-                            <li>{{$dag1->StartUurVanDag}}</li> van 12 tot 5
+                            <li>{{$dag1->StartUurVanDag}}</li>
                             <li>{{$dag1->EindUurVanDag}}</li>
                             <hr>
                         </ul>
