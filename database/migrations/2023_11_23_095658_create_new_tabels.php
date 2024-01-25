@@ -13,31 +13,24 @@ return new class extends Migration
     {
         Schema::create('Beheer', function (Blueprint $table) {
             $table->id();
-            $table->string('naam');
-            $table->string('wachtwoord');
-            $table->dateTime('laatsteLogin');
-            $table->string('email');
+            $table->string('Naam');
+            $table->string('Wachtwoord');
+            $table->dateTime('LaatsteLogin');
+            $table->string('Email');
         });
 
-        Schema::create('Leerling', function (Blueprint $table) {
+        Schema::create('Lesuren', function (Blueprint $table) {
             $table->id();
-            $table->string('naam');
-            $table->string('email')->unique();
-            $table->string('niveau');
-            $table->dateTime('startDatum');
-            $table->dateTime('eindDatum');
-            $table->string('opmerkingen');
+            $table->integer('Dag');
+            $table->time('StartUurVanDag');
+            $table->time('EindUurVanDag');
+            $table->integer('Status');
         });
-        Schema::create('Les', function (Blueprint $table) {
+        Schema::create('Recenties', function (Blueprint $table) {
             $table->id();
-            $table->time('startTijd');
-            $table->time('eindTijd');
-            $table->date('Datum');
-            $table->string('opmerkingen');
-        });
-        Schema::create('Planning', function (Blueprint $table) {
-            $table->foreignId()->references('id')->on('Leerling')->onDelete('cascade');
-            $table->foreignId()->references('id')->on('Les')->onDelete('cascade');
+            $table->time('Naam');
+            $table->time('Text');
+            $table->integer('Status');
         });
     }
 
@@ -46,9 +39,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::drop('Beheer');
-        Schema::drop('Leerling');
-        Schema::drop('Les');
-        Schema::drop('Planning');
+        Schema::dropIfExists('Beheer');
+        Schema::dropIfExists('Lesuren');
+        Schema::dropIfExists('Recenties');
     }
 };

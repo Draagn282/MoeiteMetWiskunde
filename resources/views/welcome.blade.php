@@ -1,6 +1,6 @@
 @include('includes.header')
-<div class="Home_image">
-    <section id="Thuis"class="section_Home">
+<div class="Dashboard_image">
+    <section id="Thuis"class="section_Dashboard">
         <div class="middle_section">
             <div class="lander_div">
                 <p>"Ik heb</p>
