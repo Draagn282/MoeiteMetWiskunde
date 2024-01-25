@@ -30,7 +30,7 @@ return new class extends Migration
             $table->id();
             $table->time('Naam');
             $table->time('Text');
-            $table->integer('Status');
+            $table->integer('Goedkeuring');
         });
     }
 
