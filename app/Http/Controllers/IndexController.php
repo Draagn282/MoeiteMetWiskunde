@@ -12,7 +12,7 @@ use Carbon\Carbon;
 
 class IndexController extends Controller
 {
-    public function Calendar(){
+    public function index(){
 
         //DATAABASE
         $lesuren = DB::table('lesuren')->get();

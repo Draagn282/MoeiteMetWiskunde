@@ -11,14 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Beheer', function (Blueprint $table) {
-            $table->id();
-            $table->string('Naam');
-            $table->string('Wachtwoord');
-            $table->dateTime('LaatsteLogin');
-            $table->string('Email');
-        });
-
         Schema::create('Lesuren', function (Blueprint $table) {
             $table->id();
             $table->integer('Dag');
@@ -39,7 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Beheer');
         Schema::dropIfExists('Lesuren');
         Schema::dropIfExists('Recenties');
     }

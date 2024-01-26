@@ -15,7 +15,7 @@ use App\Http\Controllers\IndexController;
 |
 */
 
-Route::get('/', [IndexController::class, 'calendar']);
+Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
