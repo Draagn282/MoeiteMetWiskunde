@@ -65,7 +65,6 @@ class IndexController extends Controller
         Mail::to('Vincent@mail.nl')->send(new Inschrijven($name, $mail, $text));
 
         return back();
-
     }
 
 
