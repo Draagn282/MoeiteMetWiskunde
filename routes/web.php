@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,14 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/', [IndexController::class, 'index']);
-Route::get('/', [IndexController::class, 'index']);
+Route::post('RevForm', [IndexController::class, 'RevieuwForm']);
+Route::post('sendMail', [IndexController::class, 'sendMail']);
 
-Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::Post('StatusVeranderen',[AdminDashboardController::class, 'StatusVeranderen'] )->middleware(['auth', 'verified'])->name('dashboard');
+Route::Post('GoedKeuren',[AdminDashboardController::class, 'GoedKeuren'] )->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

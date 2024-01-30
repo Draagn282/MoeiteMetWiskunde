@@ -32,7 +32,7 @@ class IndexController extends Controller
         $zaterdag = DB::table('lesuren')->select('*')->where('dag', '=', 6)->get();
         $zondag = DB::table('lesuren')->select('*')->where('dag', '=', 7)->get();
 
-        $revieuws = DB::table('recenties')->select('*')->where('Goedkeuring', '=', 0)->get();
+        $revieuws = DB::table('recenties')->select('*')->where('Goedkeuring', '=', 1)->get();
 
       
         //SELECT * From les WHERE Week(CURRENT_DATE) = Week(datum);

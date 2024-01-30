@@ -25,6 +25,7 @@
                 </x-dropdown-link>
             </form>
             <button> <a href={{route('profile.edit')}}>
-                {{ __('Profile') }}</a></button>
+                {{ __('Profile') }}</a>
+            </button>
         </header>
         <div class="headerheight"></div>

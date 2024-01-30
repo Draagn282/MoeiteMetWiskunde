@@ -20,8 +20,8 @@ return new class extends Migration
         });
         Schema::create('Recenties', function (Blueprint $table) {
             $table->id();
-            $table->time('Naam');
-            $table->time('Text');
+            $table->string('Naam');
+            $table->string('Text');
             $table->integer('Goedkeuring');
         });
     }
