@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\Opdracht;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,16 @@ use App\Http\Controllers\AdminDashboardController;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/Opdracht', [Opdracht::class, 'index']);
 Route::post('RevForm', [IndexController::class, 'RevieuwForm']);
 Route::post('sendMail', [IndexController::class, 'sendMail']);
+
+Route::post('RevFormC', [Opdracht::class, 'Create']);
+Route::post('RevFormCC', [Opdracht::class, 'CreateC']);
+Route::post('RevFormU', [Opdracht::class, 'Update']);
+Route::post('RevFormUC', [Opdracht::class, 'UpdateC']);
+Route::post('RevFormD', [Opdracht::class, 'Delete']);
+Route::post('RevFormDC', [Opdracht::class, 'DeleteC']);
 
 Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::Post('StatusVeranderen',[AdminDashboardController::class, 'StatusVeranderen'] )->middleware(['auth', 'verified'])->name('dashboard');

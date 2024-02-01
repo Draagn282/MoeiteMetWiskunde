@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class AdminDashboardController extends Controller
+class Opdracht extends Controller
 {
     public function index(){
 
@@ -27,13 +27,17 @@ class AdminDashboardController extends Controller
         $vrijdag = DB::table('lesuren')->select('*')->where('dag', '=', 5)->get();
         $zaterdag = DB::table('lesuren')->select('*')->where('dag', '=', 6)->get();
         $zondag = DB::table('lesuren')->select('*')->where('dag', '=', 7)->get();
+        
+        $CategoryPost = DB::table('category_post')->select('*')->get();
+        $Post = DB::table('post')->select('*')->get();
+        $Category = DB::table('categories')->select('*')->get();
 
         $revieuws = DB::table('recenties')->select('*')->get();
 
       
         //SELECT * From les WHERE Week(CURRENT_DATE) = Week(datum);
 
-        return view('dashboard', ['maandag' => $maandag, 'dinsdag' => $dinsdag, 'woensdag' => $woensdag, 'donderdag' => $donderdag, 'vrijdag' => $vrijdag, 'zaterdag' => $zaterdag, 'zondag' => $zondag, 'revieuw' => $revieuws]);
+        return view('Opdracht', ['maandag' => $maandag, 'dinsdag' => $dinsdag, 'woensdag' => $woensdag, 'donderdag' => $donderdag, 'vrijdag' => $vrijdag, 'zaterdag' => $zaterdag, 'zondag' => $zondag, 'revieuw' => $revieuws,'post' => $Post, 'categorypost' => $CategoryPost, 'category' => $Category]);
     }
 
     public function StatusVeranderen(Request $request){
@@ -65,6 +69,85 @@ class AdminDashboardController extends Controller
         };
 
         $affected = DB::table('recenties')->where('id', $Antwoord2)->update(['Goedkeuring' => $Antwoord]);
+        return back();
+    }
+
+    public function Update(Request $request){
+       
+       
+        $name = $request->input('Name');
+        $id = $request->input('Id');
+        $data = $request->input('data');
+
+        $deleted = DB::table($data)->where('id','=', $id)->update(['Title' => $name]);;
+
+        if($deleted) echo "<p>SUCCESS</p>";
+        else echo "<p>FAILED</p>";
+             
+        return back();;
+    }
+    public function UpdateC(Request $request){
+       
+       
+        $id1 = $request->input('id1');
+        $id2 = $request->input('id2');
+
+        $deleted =  DB::table('category_post')->where('category_id','=', $id1)->update(['category_id' => $id1, 'post_id' => $id2]);
+
+        if($deleted) echo "<p>SUCCESS</p>";
+        else echo "<p>FAILED</p>";
+             
+        return back();;
+    }
+
+    public function Create(Request $request){
+       
+        $name = $request->input('Name');
+        $data = $request->input('data');
+        
+
+        $insert = DB::table($data)->insert(['Title' => $name]);
+        if($insert) echo "<p>SUCCESS</p>";
+        else echo "<p>FAILED</p>";
+
+        return back();
+    }
+    
+    public function CreateC(Request $request){
+       
+        $id1 = $request->input('id1');
+        $id2 = $request->input('id2');
+        
+
+        $insert = DB::table('category_post')->insert(['category_id' => $id1, 'post_id' => $id2]);
+        if($insert) echo "<p>SUCCESS</p>";
+        else echo "<p>FAILED</p>";
+        return back();
+    }
+
+    public function Delete(Request $request){
+       
+        $name = $request->input('Name');
+        $id = $request->input('Id');
+        $data = $request->input('data');
+
+        $deleted = DB::table($data)->where('id','=', $id)->delete();
+
+        if($deleted) echo "<p>SUCCESS</p>";
+        else echo "<p>FAILED</p>";
+             
+        return back();
+    }
+    public function DeleteC(Request $request){
+       
+        $id1 = $request->input('id1');
+        $id2 = $request->input('id2');
+
+        $deleted = DB::table('category_post')->where('category_id','=', $id1)->delete();
+
+        if($deleted) echo "<p>SUCCESS</p>";
+        else echo "<p>FAILED</p>";
+             
         return back();
     }
 }
