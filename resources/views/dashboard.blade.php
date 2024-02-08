@@ -13,7 +13,7 @@
                 </tr>
                 @foreach($maandag as $uur)
                 <tr>
-                    <td>{{$uur->Dag    }}</td>
+                    <td>Maandag</td>
                   <td>{{$uur->StartUurVanDag}}</td>
                   <td>{{$uur->EindUurVanDag}}</td>
                   <td>
@@ -34,10 +34,9 @@
                   </td>
                 </tr>
                 @endforeach
-                <h1>Dinsdag</h1>
                 @foreach($dinsdag as $uur)
                 <tr>
-                    <td>{{$uur->Dag}}</td>
+                    <td>Dinsdag</td>
                   <td>{{$uur->StartUurVanDag}}</td>
                   <td>{{$uur->EindUurVanDag}}</td>
                   <td>
@@ -58,10 +57,9 @@
                   </td>
                 </tr>
                 @endforeach
-                <h1>Woensdag</h1>
                 @foreach($woensdag as $uur)
                 <tr>
-                    <td>{{$uur->Dag}}</td>
+                  <td>Woensdag</td>
                   <td>{{$uur->StartUurVanDag}}</td>
                   <td>{{$uur->EindUurVanDag}}</td>
                   <td>
@@ -82,10 +80,9 @@
                   </td>
                 </tr>
                 @endforeach
-                <h1>Donderdag</h1>
                 @foreach($donderdag as $uur)
                 <tr>
-                    <td>{{$uur->Dag}}</td>
+                  <td>Donderdag</td>
                   <td>{{$uur->StartUurVanDag}}</td>
                   <td>{{$uur->EindUurVanDag}}</td>
                   <td>
@@ -106,10 +103,9 @@
                   </td>
                 </tr>
                 @endforeach
-                <h1>Vrijdag</h1>
                 @foreach($vrijdag as $uur)
                 <tr>
-                    <td>{{$uur->Dag}}</td>
+                  <td>Vrijdag</td>
                   <td>{{$uur->StartUurVanDag}}</td>
                   <td>{{$uur->EindUurVanDag}}</td>
                   <td>
@@ -130,10 +126,9 @@
                   </td>
                 </tr>
                 @endforeach
-                <h1>Zaterdag</h1>
                 @foreach($zaterdag as $uur)
                 <tr>
-                    <td>{{$uur->Dag}}</td>
+                    <td>Zaterdag</td>
                   <td>{{$uur->StartUurVanDag}}</td>
                   <td>{{$uur->EindUurVanDag}}</td>
                   <td>
@@ -154,10 +149,9 @@
                   </td>
                 </tr>
                 @endforeach
-                <h1>Zondag</h1>
                 @foreach($zondag as $uur)
                 <tr>
-                    <td>{{$uur->Dag}}</td>
+                    <td>Zondag</td>
                   <td>{{$uur->StartUurVanDag}}</td>
                   <td>{{$uur->EindUurVanDag}}</td>
                   <td>

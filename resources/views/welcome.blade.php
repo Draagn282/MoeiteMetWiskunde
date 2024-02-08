@@ -1,12 +1,16 @@
 @include('includes.header')
-<div class="Dashboard_image">
-    <section id="Thuis"class="section_Dashboard">
+<div class="Home_image">
+    <section class="section_Home">
         <div class="middle_section">
             <div class="lander_div">
                 <p>"Ik heb</p>
                 <h1 class="Lander_text1">Moeite Met Wiskunde"</h1>
                 <p>,Nou daar kan ik mee helpen</p>
-                <div><button>BOEK NU</button><button>Kom meer te weten</button> <button>heb je een vraag?</button> </div>
+                <div>
+                    <a href="#Planning"><button>Boek nu</button></a>
+                    <a href="#Contact"><button>Heb je een vraag?</button></a>
+                    <a href="#Informatie"><button>Kom meer te weten</button></a>
+                </div>
             </div>
         </div>
     </section>
@@ -15,8 +19,7 @@
     <div class="side_section">
         <div class="Linfo_div">
             <h1>Lorem ipsum dolor sit amet.!</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!</p>   
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!e halen, de echte waarde is het overzien van de stof en het zelf nadenken. Maar uiteraard zijn studenten die alleen efficiënt examens willen halen ook helemaal welkom. Ik zie je graag verschijnen!.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, vitae amet, cum modi voluptatem eveniet quaerat minima quae dolorem quasi soluta voluptates quibusdam minus eius vero cumque voluptatum, inventore atque error delectus temporibus corrupti velit! Saepe quo non amet atque illo id officia laudantium, doloremque voluptatum suscipit aperiam laborum libero tempore? Vitae consequuntur, laborum quidem adipisci nisi numquam esse suscipit.</p>   
         </div>
     </div>
     <div class="side_section">
@@ -30,7 +33,7 @@
         <div class="info_div" id="Locatie">
             <div class="info_img">
                 <h1>locatie</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi minima possimus repellendus explicabo provident, inventore consectetur rem nisi fugiat culpa molestiae numquam architecto earum atque facilis nihil dolore totam ut. Deserunt sit hic fuga a laudantium quo ut ipsam eligendi distinctio. Recusandae magni amet error veniam totam similique saepe quibusdam eaque, a ab, perferendis dolore cum illo non ducimus iste. Asperiores commodi ut quis ullam quas labore possimus minus distinctio.</p>    
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, nihil ullam ducimus reiciendis aliquam magnam. Molestiae minus ipsum id?</p>
             </div>
         </div>
     </div>
@@ -38,8 +41,9 @@
         <div class="info_div" id="Tijden">
             <div class="info_img">
                 <h1>Tijden</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi minima possimus repellendus explicabo provident, inventore consectetur rem nisi fugiat culpa molestiae numquam architecto earum atque facilis nihil dolore totam ut. Deserunt sit hic fuga a laudantium quo ut ipsam eligendi distinctio. Recusandae magni amet error veniam totam similique saepe quibusdam eaque, a ab, perferendis dolore cum illo non ducimus iste. Asperiores commodi ut quis ullam quas labore possimus minus distinctio.</p>    
-            </div>            </div>            
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique quas dicta aliquam consectetur doloremque exercitationem est suscipit hic recusandae animi voluptatem ipsa sint, aut magni quaerat laboriosam corporis. Repudiandae, debitis.</p>
+            </div>            
+        </div>            
     </div>
     <div class="third_section">
         <div class="info_div" id="Niveau">
@@ -62,7 +66,6 @@
                         <ul>
                             <li>{{$dag1->StartUurVanDag}}</li>
                             <li>{{$dag1->EindUurVanDag}}</li>
-                            <hr>
                         </ul>
                         </div>
                         @endforeach 
@@ -74,7 +77,6 @@
                         <ul>
                             <li>{{$dag2->StartUurVanDag}}</li>
                             <li>{{$dag2->EindUurVanDag}}</li>
-                            <hr>
                         </ul>
                         </div>
                         @endforeach 
@@ -86,7 +88,6 @@
                         <ul>
                             <li>{{$dag3->StartUurVanDag}}</li>
                             <li>{{$dag3->EindUurVanDag}}</li>
-                            <hr>
                         </ul>
                         </div>
                         @endforeach 
@@ -98,7 +99,6 @@
                         <ul>
                             <li>{{$dag4->StartUurVanDag}}</li>
                             <li>{{$dag4->EindUurVanDag}}</li>
-                            <hr>
                         </ul>
                         </div>
                         @endforeach  
@@ -110,7 +110,6 @@
                         <ul>
                             <li>{{$dag5->StartUurVanDag}}</li>
                             <li>{{$dag5->EindUurVanDag}}</li>
-                            <hr>
                         </ul>
                         </div>
                         @endforeach  
@@ -122,7 +121,6 @@
                         <ul>
                             <li>{{$dag6->StartUurVanDag}}</li>
                             <li>{{$dag6->EindUurVanDag}}</li>
-                            <hr>
                         </ul>
                         </div>
                         @endforeach 
@@ -134,7 +132,6 @@
                         <ul>
                             <li>{{$dag7->StartUurVanDag}}</li>
                             <li>{{$dag7->EindUurVanDag}}</li>
-                            <hr>
                         </ul>
                         </div>
                         @endforeach  

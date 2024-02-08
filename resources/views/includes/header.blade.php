@@ -22,4 +22,4 @@
             <a href="#Recenties"><button>Recenties</button></a>
             <a href="#Contact"><button>Contact</button></a>
         </header>
-        <div class="headerheight"></div>
+        <div class="headerheight" id="Thuis"></div>
