@@ -7,7 +7,7 @@
                 <h1 class="Lander_text1">Moeite Met Wiskunde"</h1>
                 <p>Nou daar kan ik mee helpen</p>
                 <div>
-                    <a href="#Planning"><button>Boek NU</button></a>
+                    <a href="#Planning"><button>Boek nu</button></a>
                     <a href="#Informatie"><button>Kom meer te weten</button></a>
                     <a href="#Contact"><button>Heb je een vraag?</button></a>
                 </div>
@@ -72,7 +72,6 @@
                             </div>
                         @endforeach 
                     </div>
-                    
                     <div class="cday">
                         <h1>Dinsdag</h1>
                         @foreach ($dinsdag as $dag2)
@@ -152,7 +151,6 @@
                     
                 </div>
                 <div class="cfooter">
-                    
                     <p>genomen</p>
                     <div class="dayTakken"></div>
                     <p>vrij</p>
@@ -182,23 +180,6 @@
                 </div><div class="revieuw">
                     <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
                 </div>
-                <div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div>
                 @foreach ($revieuw as $rev)
                 <div class="revieuw">
                     <div class="rev"><p>{{$rev->Naam}}</p><p>{{$rev->Text}}</p></div>
@@ -206,14 +187,18 @@
                 @endforeach
         </div>
         <div class="rev_write">
-            <h1>Schrijf een revieuw!</h1>
-            <p>Als je leuke ervarignen hebt met vincent Kan je die hier opschijven!<p>
             <form action="./RevForm" method="POST">
                 @csrf
-                <label for="Name">Naam</label>
-                <input type="text" name="Name" id="Name">
-                <label for="Name">Text</label>
-                <textarea name="Quote" id="" cols="30" rows="10"></textarea>
+                <h1>Schrijf een revieuw</h1>
+                <p>Als je leuke ervarignen hebt met vincent Kan je die hier opschijven<p>
+                <div>
+                    <label for="Name">Naam</label>
+                    <input type="text" name="Name" id="Name">
+                </div>
+                <div>
+                    <label for="Quote">Text</label>
+                    <textarea name="Quote" id="Quote" cols="30" rows="10"></textarea>
+                </div>
                 <input type="submit" value="Opsturen!">
             </form>
         </div>
