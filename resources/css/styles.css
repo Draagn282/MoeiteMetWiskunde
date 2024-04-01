@@ -58,29 +58,35 @@ h1{
     --takken:#ffa8253c;
 }
 
-
 button:hover{
     cursor: pointer;
+}
+
+.flex_middle{
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
 }
 
 /* ========
     Header
 ======== */
+
 header{
     width: 100%;
     height: 6vh;
     display: flex;
     background-color: var(--darkgrey);
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
     position: fixed;
     z-index: 1000;
     -webkit-box-shadow: 0px 15px 30px 3px var(--bluegrey);
--moz-box-shadow: 0px 15px 30px 3px var(--bluegrey);
-box-shadow: 0px 15px 30px 3px var(--bluegrey);
+    -moz-box-shadow: 0px 15px 30px 3px var(--bluegrey);
+    box-shadow: 0px 15px 30px 3px var(--bluegrey);
 }
 header a{
-    width: 120px;
+    width: 160px;
     height: 100%;
 }
 header a button{
@@ -180,7 +186,7 @@ section{
 }
 
 .middle_section{
-    width: 85%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -202,7 +208,7 @@ section{
 }
 
 .lander_div div{
-    width: 500px;
+    width: 70%;
     height: 250px;
     display: flex;
     flex-direction: row;
@@ -210,24 +216,19 @@ section{
     align-items: center;
 }
 
-.lander_div div button{
-    font-family: 'Ubuntu', sans-serif;
-    width: auto;
+.lander_div div a button{
     height: 50px;
-    background-color: var(--darkorange);
-    border-radius: 10px;
-    border:  solid 2px transparent;
-    box-shadow: 0px -2px 25px 3px rgba(78,78,78,0.7);
-    -webkit-box-shadow: 0px -2px 25px 3px rgba(78,78,78,0.7);
-    -moz-box-shadow: 0px -2px 25px 3px rgba(78,78,78,0.7);
-    padding: 10px;
-    transition: 0.2s;
+    width: 200px;
+    background-color: var(--orange);
+    border: solid 2px var(--orange);
+    border-radius: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    transition: 0.1s;
 }
 
-.lander_div div button:hover{
-    background-color: #3b3b3bad;
-    border: solid 2px var(--darkorange);
-    color: var(--darkorange);
+.lander_div div a button:hover{
+    border: solid 2px var(--orange);
+    background-color:rgb(34,36,39);
     transition: 0.1s;
 }
 
@@ -250,10 +251,16 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    box-shadow: 10px 20px 10px -5px rgba(0, 0, 0, 0.2);
+
 }
 
-.info_div{
-    margin: 20px;
+.Linfo_div{
+    min-width: 600px;
+    width: 100%;
+    height: 80%;
+    background-color: var(--black);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .info_img{
@@ -269,20 +276,20 @@ section{
 
 .img_cent{
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .img_cent img{
-    width: 70%;
-    height: auto;
+    height: 100%;
 }
 
 .info_div p, .info_div h1, .Linfo_div p, .Linfo_div h1, .info_img p, .info_img h1{
     color: var(--white);
     line-height: 33px;
     font-size: 16px;
+
 }
 .Linfo_div h1, .info_div h1{
     font-size: 30px;
@@ -318,7 +325,7 @@ section{
 .calendar{
     min-width: 400px;
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     background-color: var(--black);
@@ -351,16 +358,15 @@ section{
 
 .cfooter div{
     width: 50px;
-    height: 100%;
+    height: 80%;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .cfooter p{
-    font-size: 22px;
-    font-weight: 500;
     text-align: center;
     color: var(--white);
-    border-bottom: solid 1px var(--transgrey) ;
-
 }
 
 .cday{
@@ -374,8 +380,9 @@ section{
 
 .time{
     width: 100%;
-    height: 100px;
+    height: 60px;
 }
+
 .dayNoday{
     background-color: var(--noday);
 }
@@ -396,10 +403,10 @@ section{
 
 .cday ul{
     width: 100%;
-    height: 100px;
+    height: inherit;
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
@@ -443,15 +450,20 @@ section{
     height: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .rev_body{
-    width: 60%;
-    height: 90%;
+    width: 55%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 20px 10px -5px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column; 
     flex-wrap: wrap;
     overflow-x: auto;  
+    background-color: var(--black);
 }
 .rev_write{
     width: 40%;
@@ -462,6 +474,9 @@ section{
     justify-content: center;
     align-items: center; 
     flex-wrap: wrap;  
+    box-shadow: 10px 20px 10px -5px rgba(0, 0, 0, 0.2);
+    background-color: var(--black);
+
 }
 
 
@@ -470,6 +485,8 @@ section{
     height: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center; 
 }
 
 .rev_write form div textarea{
@@ -478,17 +495,26 @@ section{
 
 }
 
-.rev{
-    width: 100%;
-    height: 130px;
+.revieuw{
+    width: 98%;
+    height: 150px;
+    padding: 10px;
+    border: solid 2px var(--lightgrey);
+    border-radius: 10px;
+    margin: 7px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly;
-    
+    justify-content: flex-start;
+    background-color: var(--noday); 
+}
+.revieuw h3{
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 20px;
 }
 
-.rev p{
+.revieuw p{
     font-size: 13px;
 }
 
