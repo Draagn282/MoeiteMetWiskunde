@@ -163,7 +163,7 @@
     </div>
 </section>
 <section class="section_middle" id="Recenties">
-    <div class="middle_section">
+    <div class="middle_section flex-center">
         <div class="rev_section">
             <div class="rev_body">
                 <div class="revieuw">
@@ -189,8 +189,11 @@
         <div class="rev_write">
             <form action="./RevForm" method="POST">
                 @csrf
-                <h1>Schrijf een revieuw</h1>
-                <p>Als je leuke ervarignen hebt met vincent Kan je die hier opschijven<p>
+                <div>
+                    <h1>Schrijf een revieuw</h1>
+                    <p>Als je leuke ervarignen hebt met vincent Kan je die hier opschijven<p>
+    
+                </div>
                 <div>
                     <label for="Name">Naam</label>
                     <input type="text" name="Name" id="Name">
@@ -206,47 +209,53 @@
        
     </div>
 </section>
-<section id="Contact">
-    <div class="two_third_section">
+<section class="flex_middle" id="Contact">
+    <div class="two_third_section flex_middle">
         <div class="contact_email">
             <form  method="POST" action="./sendMail">
                 @csrf
-                <h1>Contact</h1>
-                <p>Als je een vraag hebt of als een les wil plannen kan je hier een mail sturen</p>
-                <div class="form_small">
-                    <label for="name">Naam</label>
-                    <input type="text" value="" id="Name" name="Name">
-                    <label for="email">Email</label>
-                    <input type="email" name="Email" id="Email">
+                <div>
+                    <h1>Contact</h1>
+                    <p>Als je een vraag hebt of als een les wil plannen kan je hier een mail sturen</p>
+                </div>
+                    <div class="form_small">
+                    <div>
+                        <label for="name">Naam</label>
+                        <input type="text" value="" id="Name" name="Name">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="Email" id="Email">
+                    </div>
                 </div>
                 <div class="form_large">
                     <label for="text">Text</label>
                     <textarea name="Text" id="Text"  placeholder="Voer hier je text in..."></textarea>
                 </div>
-                <div class="form_small">
+                <div>
                     <input type="submit" value="Verzenden">
                 </div>
             </form>
         </div>
     </div>
-    <div class="third_section">        
+    <div class="third_section flex_middle">        
         <div class="contact_links">
+            <div>
+                <h1>Socials</h1>
+                <p>Hier kan je mij vinden:</p>
+            </div>
             <ul>
                 <li>
-                    <button><A HREF="mailto:vincetn@provider.nl"><ion-icon name="mail-outline"></ion-icon></a></button>
-                    <p>vincent@gmail.com</p>
+                    <a HREF="mailto:vincetn@provider.nl"><ion-icon name="mail-outline"></ion-icon>:  vincent@gmail.com</a>
                 </li>
                 <li>
-                    <button><a href=""> <ion-icon name="call-outline"></ion-icon></a></button>
-                    <p>06453935009</p>
+                    <a HREF="mailto:vincetn@provider.nl"><ion-icon name="call-outline"></ion-icon>:  +0688473625</a>
                 </li>
                 <li>
-                    <button><A HREF="mailto:vincetn@provider.nl"><ion-icon name="mail-outline"></ion-icon></a></button>
-                    <p>daan@gmail.com</p>
+                    <a HREF="mailto:vincetn@provider.nl"><ion-icon name="logo-discord"></ion-icon>:  vincent@gmail.com</a>
                 </li>
                 <li>
-                    <button><a href=""> <ion-icon name="call-outline"></ion-icon></a></button>
-                    <p>06923401859</p>
+                    <a HREF="mailto:vincetn@provider.nl"><ion-icon name="mail-outline"></ion-icon>:  vincent@gmail.com</a>
                 </li>
             </ul>
         </div>
