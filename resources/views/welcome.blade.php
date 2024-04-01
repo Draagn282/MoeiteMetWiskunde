@@ -1,26 +1,30 @@
 @include('includes.header')
-<div class="Dashboard_image">
-    <section id="Thuis"class="section_Dashboard">
+<div class="Home_image">
+    <section id="Thuis"class="section_Home">
         <div class="middle_section">
             <div class="lander_div">
                 <p>"Ik heb</p>
                 <h1 class="Lander_text1">Moeite Met Wiskunde"</h1>
-                <p>,Nou daar kan ik mee helpen</p>
-                <div><button>BOEK NU</button><button>Kom meer te weten</button> <button>heb je een vraag?</button> </div>
+                <p>Nou daar kan ik mee helpen</p>
+                <div>
+                    <a href="#Planning"><button>Boek NU</button></a>
+                    <a href="#Informatie"><button>Kom meer te weten</button></a>
+                    <a href="#Contact"><button>Heb je een vraag?</button></a>
+                </div>
             </div>
         </div>
     </section>
 </div>
 <section id="Informatie">
-    <div class="side_section">
+    <div class="two_third_section flex_middle">
         <div class="Linfo_div">
             <h1>Lorem ipsum dolor sit amet.!</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!</p>   
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!e halen, de echte waarde is het overzien van de stof en het zelf nadenken. Maar uiteraard zijn studenten die alleen efficiënt examens willen halen ook helemaal welkom. Ik zie je graag verschijnen!.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!</p>   
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!e halen, de echte waarde is het overzien van de stof en het zelf nadenken. Maar uiteraard zijn studenten die alleen efficiënt examens willen halen ook helemaal welkom. Ik zie je graag verschijnen!.</p>
         </div>
     </div>
-    <div class="side_section">
-        <div class="img_cent">
+    <div class=" flex_middle third_section ">
+        <div class="img_cent ">
             <img src="{{ asset('../resources/img/HeadShotSide.jpg') }}" alt="">                
         </div>
     </div>      
@@ -58,89 +62,96 @@
                     <div class="cday">
                         <h1>Maandag</h1>
                         @foreach ($maandag as $dag1)
-                        <div class="time @if ($dag1->Status == 0)dayNoday @elseif ($dag1->Status == 1)dayFree @elseif ($dag1->Status == 2)dayTakken @else dayNoday @endif">
-                        <ul>
-                            <li>{{$dag1->StartUurVanDag}}</li>
-                            <li>{{$dag1->EindUurVanDag}}</li>
-                            <hr>
-                        </ul>
-                        </div>
+                            <div class="time @if ($dag1->Status == 0) dayNoday @elseif ($dag1->Status == 1) dayFree @elseif ($dag1->Status == 2) dayTakken @else dayNoday @endif">
+                                <ul>
+                                    <li>{{ \Carbon\Carbon::parse($dag1->StartUurVanDag)->format('H:i') }}</li>
+                                    <li>-</li>
+                                    <li>{{ \Carbon\Carbon::parse($dag1->EindUurVanDag)->format('H:i') }}</li>
+                                </ul>
+                            </div>
                         @endforeach 
                     </div>
+                    
                     <div class="cday">
                         <h1>Dinsdag</h1>
                         @foreach ($dinsdag as $dag2)
-                        <div class="time @if ($dag2->Status == 0)dayNoday @elseif ($dag2->Status == 1)dayFree @elseif ($dag2->Status == 2)dayTakken @else dayNoday @endif">
-                        <ul>
-                            <li>{{$dag2->StartUurVanDag}}</li>
-                            <li>{{$dag2->EindUurVanDag}}</li>
-                            <hr>
-                        </ul>
-                        </div>
+                            <div class="time @if ($dag2->Status == 0) dayNoday @elseif ($dag2->Status == 1) dayFree @elseif ($dag2->Status == 2) dayTakken @else dayNoday @endif">
+                                <ul>
+                                    <li>{{ \Carbon\Carbon::parse($dag2->StartUurVanDag)->format('H:i') }}</li>
+                                    <li>-</li>
+                                    <li>{{ \Carbon\Carbon::parse($dag2->EindUurVanDag)->format('H:i') }}</li>
+                                </ul>
+                            </div>
                         @endforeach 
                     </div>
+                    
                     <div class="cday">
                         <h1>Woensdag</h1>
                         @foreach ($woensdag as $dag3)
-                        <div class="time @if ($dag3->Status == 0)dayNoday @elseif ($dag3->Status == 1)dayFree @elseif ($dag3->Status == 2)dayTakken @else dayNoday @endif">
-                        <ul>
-                            <li>{{$dag3->StartUurVanDag}}</li>
-                            <li>{{$dag3->EindUurVanDag}}</li>
-                            <hr>
-                        </ul>
-                        </div>
+                            <div class="time @if ($dag3->Status == 0) dayNoday @elseif ($dag3->Status == 1) dayFree @elseif ($dag3->Status == 2) dayTakken @else dayNoday @endif">
+                                <ul>
+                                    <li>{{ \Carbon\Carbon::parse($dag3->StartUurVanDag)->format('H:i') }}</li>
+                                    <li>-</li>
+                                    <li>{{ \Carbon\Carbon::parse($dag3->EindUurVanDag)->format('H:i') }}</li>
+                                </ul>
+                            </div>
                         @endforeach 
                     </div>
+                    
                     <div class="cday">
                         <h1>Donderdag</h1>
                         @foreach ($donderdag as $dag4)
-                        <div class="time @if ($dag4->Status == 0)dayNoday @elseif ($dag4->Status == 1)dayFree @elseif ($dag4->Status == 2)dayTakken @else dayNoday @endif">
-                        <ul>
-                            <li>{{$dag4->StartUurVanDag}}</li>
-                            <li>{{$dag4->EindUurVanDag}}</li>
-                            <hr>
-                        </ul>
-                        </div>
-                        @endforeach  
+                            <div class="time @if ($dag4->Status == 0) dayNoday @elseif ($dag4->Status == 1) dayFree @elseif ($dag4->Status == 2) dayTakken @else dayNoday @endif">
+                                <ul>
+                                    <li>{{ \Carbon\Carbon::parse($dag4->StartUurVanDag)->format('H:i') }}</li>
+                                    <li>-</li>
+                                    <li>{{ \Carbon\Carbon::parse($dag4->EindUurVanDag)->format('H:i') }}</li>
+                                </ul>
+                            </div>
+                        @endforeach 
                     </div>
+                    
                     <div class="cday">
                         <h1>Vrijdag</h1>
                         @foreach ($vrijdag as $dag5)
-                        <div class="time @if ($dag5->Status == 0)dayNoday @elseif ($dag5->Status == 1)dayFree @elseif ($dag5->Status == 2)dayTakken @else dayNoday @endif">
-                        <ul>
-                            <li>{{$dag5->StartUurVanDag}}</li>
-                            <li>{{$dag5->EindUurVanDag}}</li>
-                            <hr>
-                        </ul>
-                        </div>
-                        @endforeach  
+                            <div class="time @if ($dag5->Status == 0) dayNoday @elseif ($dag5->Status == 1) dayFree @elseif ($dag5->Status == 2) dayTakken @else dayNoday @endif">
+                                <ul>
+                                    <li>{{ \Carbon\Carbon::parse($dag5->StartUurVanDag)->format('H:i') }}</li>
+                                    <li>-</li>
+                                    <li>{{ \Carbon\Carbon::parse($dag5->EindUurVanDag)->format('H:i') }}</li>
+                                </ul>
+                            </div>
+                        @endforeach 
                     </div>
+                    
                     <div class="cday">
                         <h1>Zaterdag</h1>
                         @foreach ($zaterdag as $dag6)
-                        <div class="time @if ($dag6->Status == 0)dayNoday @elseif ($dag6->Status == 1)dayFree @elseif ($dag6->Status == 2)dayTakken @else dayNoday @endif">
-                        <ul>
-                            <li>{{$dag6->StartUurVanDag}}</li>
-                            <li>{{$dag6->EindUurVanDag}}</li>
-                            <hr>
-                        </ul>
-                        </div>
+                            <div class="time @if ($dag6->Status == 0) dayNoday @elseif ($dag6->Status == 1) dayFree @elseif ($dag6->Status == 2) dayTakken @else dayNoday @endif">
+                                <ul>
+                                    <li>{{ \Carbon\Carbon::parse($dag6->StartUurVanDag)->format('H:i') }}</li>
+                                    <li>-</li>
+                                    <li>{{ \Carbon\Carbon::parse($dag6->EindUurVanDag)->format('H:i') }}</li>
+                                </ul>
+                            </div>
                         @endforeach 
                     </div>
                     <div class="cday">
                         <h1>Zondag</h1>
                         @foreach ($zondag as $dag7)
-                        <div class="time @if ($dag7->Status == 0)dayNoday @elseif ($dag7->Status == 1)dayFree @elseif ($dag7->Status == 2)dayTakken @else dayNoday @endif">
-                        <ul>
-                            <li>{{$dag7->StartUurVanDag}}</li>
-                            <li>{{$dag7->EindUurVanDag}}</li>
-                            <hr>
-                        </ul>
-                        </div>
-                        @endforeach  
+                            <div class="time @if ($dag7->Status == 0) dayNoday @elseif ($dag7->Status == 1) dayFree @elseif ($dag7->Status == 2) dayTakken @else dayNoday @endif">
+                                <ul>
+                                    <li>{{ \Carbon\Carbon::parse($dag7->StartUurVanDag)->format('H:i') }}</li>
+                                    <li>-</li>
+                                    <li>{{ \Carbon\Carbon::parse($dag7->EindUurVanDag)->format('H:i') }}</li>
+                                </ul>
+                            </div>
+                        @endforeach 
                     </div>
+                    
                 </div>
                 <div class="cfooter">
+                    
                     <p>genomen</p>
                     <div class="dayTakken"></div>
                     <p>vrij</p>
@@ -156,8 +167,41 @@
     <div class="middle_section">
         <div class="rev_section">
             <div class="rev_body">
+                <div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div>
+                <div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div>
+                <div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div><div class="revieuw">
+                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                </div>
                 @foreach ($revieuw as $rev)
-                <div class="rev"><p>{{$rev->Naam}}</p><p>{{$rev->Text}}</p></div>
+                <div class="revieuw">
+                    <div class="rev"><p>{{$rev->Naam}}</p><p>{{$rev->Text}}</p></div>
+                </div>
                 @endforeach
         </div>
         <div class="rev_write">
