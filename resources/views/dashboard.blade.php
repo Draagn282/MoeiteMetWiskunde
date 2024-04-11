@@ -1,181 +1,55 @@
 @include('includes.Adminheader')
     <section>
-        <div class="side_section">
-            <p>Dit is voor de dagen</p>
+      <div class="Times">
+              @foreach($days as $day => $hours)
+              @dd($hours)
+              <div class="Day" id="{{$day->Dag}}">
+              <form method="POST" action="StatusVeranderen">
+                @csrf
+                @method('POST')
+                <h2>{{$time->Dag}}</h2>
+                <table class="table table-sm table no-border borderless">
+                    <thead class="thead">
+                        <tr>
+                            <th>Id</th>
+                            <th>Start Tijd</th>
+                            <th>Eind Tijd</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($hours as $time)            
 
-            <table>
-                <tr>
-                    <th>Dag</th>
-                    <th>Start tijd</th>
-                    <th>Eind tijd</th>
-                    <th>status</th>
-                    <th>verander status</th>
-                </tr>
-                @foreach($maandag as $uur)
-                <tr>
-                    <td>Maandag</td>
-                  <td>{{$uur->StartUurVanDag}}</td>
-                  <td>{{$uur->EindUurVanDag}}</td>
-                  <td>
-                    @if ($uur->Status == 0)Geen les 
-                    @elseif ($uur->Status == 1)Vrije les 
-                    @elseif ($uur->Status == 2)Genomen les 
-                    @else Geen les 
-                    @endif
-                  </td>
-                  <td>
-                    <form action="StatusVeranderen" method="post">
-                        @csrf
-                        <input type="text" name="Id" value="{{$uur->id}}" hidden>
-                        <input type="submit" name="Sub" value="Geen">
-                        <input type="submit" name="Sub" value="Vrij">
-                        <input type="submit" name="Sub" value="Genomen">
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-                @foreach($dinsdag as $uur)
-                <tr>
-                    <td>Dinsdag</td>
-                  <td>{{$uur->StartUurVanDag}}</td>
-                  <td>{{$uur->EindUurVanDag}}</td>
-                  <td>
-                    @if ($uur->Status == 0)Geen les 
-                    @elseif ($uur->Status == 1)Vrije les 
-                    @elseif ($uur->Status == 2)Genomen les 
-                    @else Geen les 
-                    @endif
-                  </td>
-                  <td>
-                    <form action="StatusVeranderen" method="post">
-                        @csrf
-                        <input type="text" name="Id" value="{{$uur->id}}" hidden>
-                        <input type="submit" name="Sub" value="Geen">
-                        <input type="submit" name="Sub" value="Vrij">
-                        <input type="submit" name="Sub" value="Genomen">
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-                @foreach($woensdag as $uur)
-                <tr>
-                  <td>Woensdag</td>
-                  <td>{{$uur->StartUurVanDag}}</td>
-                  <td>{{$uur->EindUurVanDag}}</td>
-                  <td>
-                    @if ($uur->Status == 0)Geen les 
-                    @elseif ($uur->Status == 1)Vrije les 
-                    @elseif ($uur->Status == 2)Genomen les 
-                    @else Geen les 
-                    @endif
-                  </td>
-                  <td>
-                    <form action="StatusVeranderen" method="post">
-                        @csrf
-                        <input type="text" name="Id" value="{{$uur->id}}" hidden>
-                        <input type="submit" name="Sub" value="Geen">
-                        <input type="submit" name="Sub" value="Vrij">
-                        <input type="submit" name="Sub" value="Genomen">
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-                @foreach($donderdag as $uur)
-                <tr>
-                  <td>Donderdag</td>
-                  <td>{{$uur->StartUurVanDag}}</td>
-                  <td>{{$uur->EindUurVanDag}}</td>
-                  <td>
-                    @if ($uur->Status == 0)Geen les 
-                    @elseif ($uur->Status == 1)Vrije les 
-                    @elseif ($uur->Status == 2)Genomen les 
-                    @else Geen les 
-                    @endif
-                  </td>
-                  <td>
-                    <form action="StatusVeranderen" method="post">
-                        @csrf
-                        <input type="text" name="Id" value="{{$uur->id}}" hidden>
-                        <input type="submit" name="Sub" value="Geen">
-                        <input type="submit" name="Sub" value="Vrij">
-                        <input type="submit" name="Sub" value="Genomen">
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-                @foreach($vrijdag as $uur)
-                <tr>
-                  <td>Vrijdag</td>
-                  <td>{{$uur->StartUurVanDag}}</td>
-                  <td>{{$uur->EindUurVanDag}}</td>
-                  <td>
-                    @if ($uur->Status == 0)Geen les 
-                    @elseif ($uur->Status == 1)Vrije les 
-                    @elseif ($uur->Status == 2)Genomen les 
-                    @else Geen les 
-                    @endif
-                  </td>
-                  <td>
-                    <form action="StatusVeranderen" method="post">
-                        @csrf
-                        <input type="text" name="Id" value="{{$uur->id}}" hidden>
-                        <input type="submit" name="Sub" value="Geen">
-                        <input type="submit" name="Sub" value="Vrij">
-                        <input type="submit" name="Sub" value="Genomen">
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-                @foreach($zaterdag as $uur)
-                <tr>
-                    <td>Zaterdag</td>
-                  <td>{{$uur->StartUurVanDag}}</td>
-                  <td>{{$uur->EindUurVanDag}}</td>
-                  <td>
-                    @if ($uur->Status == 0)Geen les 
-                    @elseif ($uur->Status == 1)Vrije les 
-                    @elseif ($uur->Status == 2)Genomen les 
-                    @else Geen les 
-                    @endif
-                  </td>
-                  <td>
-                    <form action="StatusVeranderen" method="post">
-                        @csrf
-                        <input type="text" name="Id" value="{{$uur->id}}" hidden>
-                        <input type="submit" name="Sub" value="Geen">
-                        <input type="submit" name="Sub" value="Vrij">
-                        <input type="submit" name="Sub" value="Genomen">
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-                @foreach($zondag as $uur)
-                <tr>
-                    <td>Zondag</td>
-                  <td>{{$uur->StartUurVanDag}}</td>
-                  <td>{{$uur->EindUurVanDag}}</td>
-                  <td>
-                    @if ($uur->Status == 0)Geen les 
-                    @elseif ($uur->Status == 1)Vrije les 
-                    @elseif ($uur->Status == 2)Genomen les 
-                    @else Geen les 
-                    @endif
-                  </td>
-                  <td>
-                    <form action="StatusVeranderen" method="post">
-                        @csrf
-                        <input type="text" name="Id" value="{{$uur->id}}" hidden>
-                        <input type="submit" name="Sub" value="Geen">
-                        <input type="submit" name="Sub" value="Vrij">
-                        <input type="submit" name="Sub" value="Genomen">
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-              </table>
+                          <tr>
+                            <td><input type="text" class="form-control" value="{{$time->id}}" readonly></td>
+                            <td><input type="text" class="form-control" name="Start_tijd[]" placeholder="Start tijd" value="{{$time->StartUurVanDag}}"></td>
+                            <td><input type="text" class="form-control" name="Eind_tijd[]" placeholder="Start tijd" value="{{$time->EindUurVanDag}}"></td>
+                              <td>
+                                <select class="form-control" name="Status[]">
+                                    <option value="0" {{ $time->Status == 0 ? 'selected' : '' }}>Genomen</option>
+                                    <option value="1" {{ $time->Status == 1 ? 'selected' : '' }}>Vrij</option>
+                                    <option value="2" {{ $time->Status == 2 ? 'selected' : '' }}>Niet Mogelijk</option>
+                                </select>
+                            </td>
+                            </td>
+                          </tr>
+                          @endforeach
 
-        </div>
-        <div class="side_section">
+                    </tbody>
+                </table>
+                    </div>
+                    <!-- Add any hidden fields or additional form inputs here -->
+                    <button type="submit" class="btn btn-primary">@lang('global.submit')</button> <!-- Submit Button -->
+                </div>
+            </form>
+            @endforeach
+      </div>
+    </section>
+        
+        {{-- <div class="side_section">
             <p>Dit is voor het goedkeuren</p>
             <table>
                 <tr>
@@ -200,7 +74,7 @@
                 </tr>
                 @endforeach
               </table>
-        </div>
-    </section>
+        </div> --}}
+    </section>  
 @include('includes.Adminfooter')
 

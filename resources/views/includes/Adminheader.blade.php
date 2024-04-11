@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="path/to/bootstrap.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>

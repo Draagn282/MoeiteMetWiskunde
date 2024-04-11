@@ -1,71 +1,98 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Lesuren;
+use App\Models\Recenties;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Dupliceren;
 use App\Mail\Inschrijven;
 use Illuminate\View\View;
-use Carbon\Carbon;
+
 
 class IndexController extends Controller
 {
-    public function index(){
 
-        //DATAABASE
-        $lesuren = DB::table('lesuren')->get();
-        $recenties = DB::table('recenties')->get();
-        
-        // TIME
-        $VandaagDatum = Carbon::now()->format('d-m-Y');
-        $Nu = Carbon::now();
-        $WeekNummer = $Nu->weekOfYear;
-        //->dd()
-
-        $maandag = DB::table('lesuren')->select('*')->where('dag', '=', 1)->get();
-        $dinsdag = DB::table('lesuren')->select('*')->where('dag', '=', 2)->get();
-        $woensdag = DB::table('lesuren')->select('*')->where('dag', '=', 3)->get();
-        $donderdag = DB::table('lesuren')->select('*')->where('dag', '=', 4)->get();
-        $vrijdag = DB::table('lesuren')->select('*')->where('dag', '=', 5)->get();
-        $zaterdag = DB::table('lesuren')->select('*')->where('dag', '=', 6)->get();
-        $zondag = DB::table('lesuren')->select('*')->where('dag', '=', 7)->get();
-
-        $revieuws = DB::table('recenties')->select('*')->where('Goedkeuring', '=', 1)->get();
-
-      
-        //SELECT * From les WHERE Week(CURRENT_DATE) = Week(datum);
-
-        return view('welcome', ['maandag' => $maandag, 'dinsdag' => $dinsdag, 'woensdag' => $woensdag, 'donderdag' => $donderdag, 'vrijdag' => $vrijdag, 'zaterdag' => $zaterdag, 'zondag' => $zondag, 'revieuw' => $revieuws]);
+    
+    public function index()
+    {
+        // Fetch lesuren for each day of the week using Eloquent
+        $days = [];
+        for ($i = 1; $i <= 7; $i++) {
+            $days[$i] = Lesuren::where('dag', $i)->get();
+        }
+    
+        // Fetch recenties with approval status using Eloquent
+        $reviews = Recenties::where('Goedkeuring', 1)->get();
+    
+        // Current date
+        $today = Carbon::now()->format('d-m-Y');
+    
+        // Week number
+        $weekNumber = Carbon::now()->weekOfYear;
+    
+        return view('welcome', compact('days', 'reviews', 'today', 'weekNumber'));
     }
 
-    public function RevieuwForm(Request $request){
-       
+    
+    public function RevieuwForm(Request $request)
+    {
+        // Validate the incoming request data
+        $request->validate([
+            'Name' => 'required|string',
+            'Quote' => 'required|string',
+        ]);
+    
+        // Retrieve data from the request
         $name = $request->input('Name');
         $text = $request->input('Quote');
-        $clearance = 0;
+    
+        // Create a new recentie instance
+        $recentie = new Recenties();
+        $recentie->Naam = $name;
+        $recentie->Text = $text;
+        $recentie->GoedKeuring = 0; // Assuming 0 indicates pending approval
+    
+        // Save the recentie
+        $saved = $recentie->save();
+    
+        // Check if the recentie was successfully saved
+        if ($saved) {
+            return response()->json(['message' => 'SUCCESS'], 200);
+        } else {
+            return response()->json(['message' => 'FAILED'], 500);
+        }
+    }
+    
+
+    public function sendMail(Request $request)
+{
+    // Validate the incoming request data
+    $request->validate([
+        'Name' => 'required|string',
+        'Email' => 'required|email',
+        'Text' => 'required|string',
+    ]);
+
+    // Retrieve data from the request
+    $name = $request->input('Name');
+    $email = $request->input('Email');
+    $text = $request->input('Text');
+
+    try {
+        // Send mail to the provided email address
+        Mail::to($email)->send(new Dupliceren($name, $email, $text));
         
+        // Send mail to the admin email address
+        Mail::to('Vincent@mail.nl')->send(new Inschrijven($name, $email, $text));
 
-        $insert = DB::table('recenties')->insert(['Naam' => $name, 'Text' => $text, 'GoedKeuring' => 0 ]);
-
-        if($insert) echo "<p>SUCCESS</p>";
-        else echo "<p>FAILED</p>";
+        return back()->with('success', 'Email sent successfully.');
+    } catch (\Exception $e) {
+        // Handle any exceptions that occur during email sending
+        return back()->with('error', 'Failed to send email.');
     }
-
-    public function sendMail(Request $request){
-
-        $name = $request->input('Name');
-        $mail = $request->input('Email');
-        $text = $request->input('Text');
-
-      //  dd($request, $name, $mail, $text, );
-
-        Mail::to($mail)->send(new Dupliceren($name, $mail, $text));
-        Mail::to('Vincent@mail.nl')->send(new Inschrijven($name, $mail, $text));
-
-        return back();
-    }
-
+}
 
 }

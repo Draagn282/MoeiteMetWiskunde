@@ -9,32 +9,28 @@ use Carbon\Carbon;
 class AdminDashboardController extends Controller
 {
     public function index(){
-
-        //DATAABASE
+        // Fetch data from the database using Eloquent models
         $lesuren = DB::table('lesuren')->get();
         $recenties = DB::table('recenties')->get();
         
-        // TIME
+        // Current date and time
         $VandaagDatum = Carbon::now()->format('d-m-Y');
         $Nu = Carbon::now();
         $WeekNummer = $Nu->weekOfYear;
-        //->dd()
-
-        $maandag = DB::table('lesuren')->select('*')->where('dag', '=', 1)->get();
-        $dinsdag = DB::table('lesuren')->select('*')->where('dag', '=', 2)->get();
-        $woensdag = DB::table('lesuren')->select('*')->where('dag', '=', 3)->get();
-        $donderdag = DB::table('lesuren')->select('*')->where('dag', '=', 4)->get();
-        $vrijdag = DB::table('lesuren')->select('*')->where('dag', '=', 5)->get();
-        $zaterdag = DB::table('lesuren')->select('*')->where('dag', '=', 6)->get();
-        $zondag = DB::table('lesuren')->select('*')->where('dag', '=', 7)->get();
-
-        $revieuws = DB::table('recenties')->select('*')->get();
-
-      
-        //SELECT * From les WHERE Week(CURRENT_DATE) = Week(datum);
-
-        return view('dashboard', ['maandag' => $maandag, 'dinsdag' => $dinsdag, 'woensdag' => $woensdag, 'donderdag' => $donderdag, 'vrijdag' => $vrijdag, 'zaterdag' => $zaterdag, 'zondag' => $zondag, 'revieuw' => $revieuws]);
-    }
+    
+        // Fetch lesuren for each day of the week
+        $days = [];
+        for ($i = 1; $i <= 7; $i++) {
+            $days[$i] = DB::table('lesuren')->where('dag', $i)->get();
+        }
+    
+        // Fetch reviews
+        $reviews = DB::table('recenties')->select('*')->get();
+    
+        // Pass data to the view
+        return view('dashboard', compact('lesuren', 'recenties', 'VandaagDatum', 'WeekNummer', 'days', 'reviews'));
+    }  
+    
 
     public function StatusVeranderen(Request $request){
        
@@ -51,6 +47,8 @@ class AdminDashboardController extends Controller
 
         $affected = DB::table('lesuren')->where('id', $Antwoord2)->update(['Status' => $Antwoord]);
         return back();
+
+    
     }
     public function GoedKeuren(Request $request){
        

@@ -15,48 +15,45 @@
         </div>
     </section>
 </div>
-<section id="Informatie">
-    <div class="two_third_section flex_middle">
+<section class="section flex_middle" id="Informatie">
+    <div class="Linfo_div_img">
         <div class="Linfo_div">
-            <h1>Lorem ipsum dolor sit amet.!</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!</p>   
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!e halen, de echte waarde is het overzien van de stof en het zelf nadenken. Maar uiteraard zijn studenten die alleen efficiënt examens willen halen ook helemaal welkom. Ik zie je graag verschijnen!.</p>
-        </div>
+            <div class="text_cent">
+                <h1>Lorem ipsum dolor sit amet.!</h1>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!</p>   
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum iure perferendis sed totam quidem veniam, ipsam distinctio iste eum dicta culpa quibusdam consectetur tenetur laboriosam doloribus eius architecto! Aspernatur!e halen, de echte waarde is het overzien van de stof en het zelf nadenken. Maar uiteraard zijn studenten die alleen efficiënt examens willen halen ook helemaal welkom. Ik zie je graag verschijnen!.</p>
+            </div>
+            <div class="img_cent ">
+                <img src="{{ asset('../resources/img/HeadShotSide.jpg') }}" alt="">                
+            </div>
+        </div>   
     </div>
-    <div class=" flex_middle third_section ">
-        <div class="img_cent ">
-            <img src="{{ asset('../resources/img/HeadShotSide.jpg') }}" alt="">                
-        </div>
-    </div>      
 </section>
-<section>
-    <div class="third_section">
+<section id="Informatie2">
         <div class="info_div" id="Locatie">
             <div class="info_img">
                 <h1>locatie</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, nihil ullam ducimus reiciendis aliquam magnam. Molestiae minus ipsum id?</p>
             </div>
         </div>
-    </div>
-    <div class="third_section">
+
         <div class="info_div" id="Tijden">
             <div class="info_img">
                 <h1>Tijden</h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique quas dicta aliquam consectetur doloremque exercitationem est suscipit hic recusandae animi voluptatem ipsa sint, aut magni quaerat laboriosam corporis. Repudiandae, debitis.</p>
             </div>            
         </div>            
-    </div>
-    <div class="third_section">
+
         <div class="info_div" id="Niveau">
             <div class="info_img">
                 <h1>Niveau</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi minima possimus repellendus explicabo provident, inventore consectetur rem nisi fugiat culpa molestiae numquam architecto earum atque facilis nihil dolore totam ut. Deserunt sit hic fuga a laudantium quo ut ipsam eligendi distinctio. Recusandae magni amet error veniam totam similique saepe quibusdam eaque, a ab, perferendis dolore cum illo non ducimus iste. Asperiores commodi ut quis ullam quas labore possimus minus distinctio.</p>    
             </div>            
         </div>            
-    </div>
 </section>
-<section class="section_middle" id="Planning">
-    <div class="middle_section">
+<section  id="Planning">
         <div class="calendar">
             <div class="cheader"><p>Week planning</p></div>
                 <div class="cbody">
@@ -162,29 +159,30 @@
         </div>
     </div>
 </section>
-<section class="section_middle" id="Recenties">
-    <div class="middle_section flex-center">
-        <div class="rev_section">
-            <div class="rev_body">
-                <div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div>
-                <div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div><div class="revieuw">
-                    <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
-                </div>
-                @foreach ($revieuw as $rev)
-                <div class="revieuw">
-                    <div class="rev"><p>{{$rev->Naam}}</p><p>{{$rev->Text}}</p></div>
-                </div>
-                @endforeach
+<section  id="Recenties">
+        <div class="rev_section flex-center">
+            <div class="rev_body_img">
+                <div class="rev_body">
+                    <div class="revieuw">
+                        <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                    </div>
+                    <div class="revieuw">
+                        <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                    </div><div class="revieuw">
+                        <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                    </div><div class="revieuw">
+                        <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                    </div><div class="revieuw">
+                        <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                    </div><div class="revieuw">
+                        <h3>Daan</h3><p>Hi ik ben daan vincent is cool.</p>
+                    </div>
+                    @foreach ($revieuw as $rev)
+                    <div class="revieuw">
+                        <div class="rev"><p>{{$rev->Naam}}</p><p>{{$rev->Text}}</p></div>
+                    </div>
+                    @endforeach
+            </div>
         </div>
         <div class="rev_write">
             <form action="./RevForm" method="POST">
@@ -204,13 +202,11 @@
                 </div>
                 <input type="submit" value="Opsturen!">
             </form>
-        </div>
-        </div>
-       
+        </div>       
     </div>
 </section>
-<section class="flex_middle" id="Contact">
-    <div class="two_third_section flex_middle">
+<section id="Contact">
+    <div class="contact_email_img">
         <div class="contact_email">
             <form  method="POST" action="./sendMail">
                 @csrf
@@ -236,9 +232,9 @@
                     <input type="submit" value="Verzenden">
                 </div>
             </form>
-        </div>
     </div>
-    <div class="third_section flex_middle">        
+    </div>
+        
         <div class="contact_links">
             <div>
                 <h1>Socials</h1>
@@ -258,7 +254,6 @@
                     <a HREF="mailto:vincetn@provider.nl"><ion-icon name="mail-outline"></ion-icon>:  vincent@gmail.com</a>
                 </li>
             </ul>
-        </div>
     </div>
 </section>
 @include('includes.footer')

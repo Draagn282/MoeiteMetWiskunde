@@ -2,20 +2,21 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
-class HoursSeeder extends Seeder
+class HoursSeeder  extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
         // Define sample data for days
-        $days = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'];
+        $days = ['1_Monday', '2_Tuesday', '3_Wednesday', '4_Thursday', '5_Friday', '6_Saturday', '7_Sunday'];
 
         // Loop through each day
         foreach ($days as $index => $day) {
@@ -26,11 +27,13 @@ class HoursSeeder extends Seeder
                 $end = $start->copy()->addHour();
 
                 // Insert data for the hour
-                DB::table('Lesuren')->insert([
-                    'Dag' => $index + 1,
-                    'StartUurVanDag' => $start,
-                    'EindUurVanDag' => $end,
-                    'Status' => 0,
+                DB::table('lesuren')->insert([
+                    'dag' => $day,
+                    'start_time' => $start->format('H:i:s'),
+                    'end_time' => $end->format('H:i:s'),
+                    'status' => 'niet mogelijk',
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ]);
             }
         }
